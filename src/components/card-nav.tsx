@@ -19,8 +19,6 @@ export type CardNavItem = {
 };
 
 export interface CardNavProps {
-  logo: string;
-  logoAlt?: string;
   items: CardNavItem[];
   className?: string;
   ease?: string;

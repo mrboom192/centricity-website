@@ -1,6 +1,5 @@
 import CardNav from "@/components/card-nav";
 import Iridescence from "@/components/iridescence";
-import logo from "@/../public/logo.svg";
 import BackgroundContent from "@/components/background-content";
 
 export default function Home() {
@@ -45,8 +44,6 @@ export default function Home() {
       />
       <BackgroundContent headline="Coming Soon" />
       <CardNav
-        logo={logo}
-        logoAlt="Company Logo"
         items={items}
         baseColor="#fff"
         menuColor="#000"
