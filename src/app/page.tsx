@@ -1,6 +1,7 @@
 import CardNav from "@/components/card-nav";
 import Iridescence from "@/components/iridescence";
 import logo from "@/../public/logo.svg";
+import BackgroundContent from "@/components/background-content";
 
 export default function Home() {
   const items = [
@@ -9,8 +10,8 @@ export default function Home() {
       bgColor: "#0D0716",
       textColor: "#fff",
       links: [
-        { label: "Company", ariaLabel: "About Company" },
-        { label: "Careers", ariaLabel: "About Careers" },
+        { label: "Company", href: "#", ariaLabel: "About Company" },
+        { label: "Careers", href: "#", ariaLabel: "About Careers" },
       ],
     },
     {
@@ -18,8 +19,8 @@ export default function Home() {
       bgColor: "#170D27",
       textColor: "#fff",
       links: [
-        { label: "Featured", ariaLabel: "Featured Projects" },
-        { label: "Case Studies", ariaLabel: "Project Case Studies" },
+        { label: "Featured", href: "#", ariaLabel: "Featured Projects" },
+        { label: "Case Studies", href: "#", ariaLabel: "Project Case Studies" },
       ],
     },
     {
@@ -27,21 +28,22 @@ export default function Home() {
       bgColor: "#271E37",
       textColor: "#fff",
       links: [
-        { label: "Email", ariaLabel: "Email us" },
-        { label: "Twitter", ariaLabel: "Twitter" },
-        { label: "LinkedIn", ariaLabel: "LinkedIn" },
+        { label: "Email", href: "#", ariaLabel: "Email us" },
+        { label: "Twitter", href: "#", ariaLabel: "Twitter" },
+        { label: "LinkedIn", href: "#", ariaLabel: "LinkedIn" },
       ],
     },
   ];
 
   return (
-    <>
+    <main className="relative min-h-screen overflow-hidden">
       <Iridescence
         color={[0.5, 0.6, 0.8]}
         mouseReact
         amplitude={0.1}
         speed={1}
       />
+      <BackgroundContent pillText="Welcome" headline="Coming Soon" />
       <CardNav
         logo={logo}
         logoAlt="Company Logo"
@@ -51,8 +53,7 @@ export default function Home() {
         buttonBgColor="#111"
         buttonTextColor="#fff"
         ease="power3.out"
-        theme="light"
       />
-    </>
+    </main>
   );
 }

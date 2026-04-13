@@ -31,13 +31,9 @@ export interface CardNavProps {
 }
 
 const CardNav: React.FC<CardNavProps> = ({
-  logo,
-  logoAlt = "Logo",
   items,
   className = "",
   ease = "power3.out",
-  baseColor = "#fff",
-  menuColor,
   buttonBgColor,
   buttonTextColor,
 }) => {
@@ -167,32 +163,41 @@ const CardNav: React.FC<CardNavProps> = ({
     >
       <nav
         ref={navRef}
-        className={`card-nav ${isExpanded ? "open" : ""} block h-[60px] p-0 rounded-xl shadow-md relative overflow-hidden will-change-[height]`}
-        style={{ backgroundColor: baseColor }}
+        className={`card-nav ${isExpanded ? "open" : ""} block h-[60px] p-0 rounded-xl shadow-md relative overflow-hidden will-change-[height] bg-white/5 backdrop-blur-md border border-white/10 shadow-md`}
       >
-        <div className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between p-2 pl-[1.1rem] z-[2]">
+        <div className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between pr-6 md:pr-2 p-2 pl-[1.1rem] z-[2]">
           <div
-            className={`hamburger-menu ${isHamburgerOpen ? "open" : ""} group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px] order-2 md:order-none`}
+            className={`hamburger-menu ${
+              isHamburgerOpen ? "open" : ""
+            } group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px] order-2 md:order-none`}
             onClick={toggleMenu}
             role="button"
             aria-label={isExpanded ? "Close menu" : "Open menu"}
             tabIndex={0}
-            style={{ color: menuColor || "#000" }}
+            style={{ color: "#FFF" }}
           >
             <div
-              className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
-                isHamburgerOpen ? "translate-y-[4px] rotate-45" : ""
-              } group-hover:opacity-75`}
+              className={`hamburger-line w-[30px] h-[2px] bg-current transition-transform duration-200 ease-in-out`}
+              style={{
+                transformOrigin: "50% 50%",
+                transform: isHamburgerOpen
+                  ? "translateY(4px) rotate(45deg)"
+                  : "translateY(0px) rotate(0deg)",
+              }}
             />
             <div
-              className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
-                isHamburgerOpen ? "-translate-y-[4px] -rotate-45" : ""
-              } group-hover:opacity-75`}
+              className={`hamburger-line w-[30px] h-[2px] bg-current transition-transform duration-200 ease-in-out`}
+              style={{
+                transformOrigin: "50% 50%",
+                transform: isHamburgerOpen
+                  ? "translateY(-4px) rotate(-45deg)"
+                  : "translateY(0px) rotate(0deg)",
+              }}
             />
           </div>
 
           <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
-            <Logo className="fill-black h-10" />
+            <Logo className="fill-white h-7" />
           </div>
 
           <button
