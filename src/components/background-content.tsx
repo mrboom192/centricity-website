@@ -8,7 +8,7 @@ const BackgroundContent = ({
   return (
     <div className="select-none">
       {/* Center content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-[1] pointer-events-none">
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-1 pointer-events-none">
         {/* Headline */}
         <h1 className="mt-4 text-white text-center font-bold leading-tight tracking-[-2px] max-w-[16ch] text-[clamp(2rem,4vw,2.2rem)] drop-shadow-md">
           {headline}
