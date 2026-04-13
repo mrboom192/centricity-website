@@ -43,7 +43,7 @@ export default function Home() {
         amplitude={0.1}
         speed={1}
       />
-      <BackgroundContent pillText="Welcome" headline="Coming Soon" />
+      <BackgroundContent headline="Coming Soon" />
       <CardNav
         logo={logo}
         logoAlt="Company Logo"
